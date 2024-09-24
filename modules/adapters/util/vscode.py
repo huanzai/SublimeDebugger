@@ -35,7 +35,10 @@ class AdapterInstaller(dap.AdapterInstaller):
 			...
 
 		path = self.temporary_install_path()
-		await request.download_and_extract_zip(url, path, 'extension', log=log)
+		if not url.startswith("http"):
+			await request.extract_zip(url, path, 'extension', log=log)
+		else:
+			await request.download_and_extract_zip(url, path, 'extension', log=log)
 
 
 	async def install_source(self, url: str, *, log: core.Logger):

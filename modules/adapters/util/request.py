@@ -94,23 +94,14 @@ def handle_request_error(url: str, error: Exception):
 	else:
 		return core.Error(f'Unable to perform request ({error}) ({url})')
 
-async def download_and_extract_zip(url: str, path: str, extract_folder: str|None = None, *, log: core.Logger = core.stdio):
+async def extract_zip(source_path: str, path: str, extract_folder: str|None = None, *, log: core.Logger = core.stdio):
 	def log_info(value: str):
 		sublime.status_message(f'Debugger: {value}')
-		# core.call_soon_threadsafe(log.info, value)
-
-	archive_name = f'{path}.zip'
-	response = await request(url)
 
 	@core.run_in_executor
 	def blocking():
-
-		with open(archive_name, 'wb') as out_file:
-			_copyfileobj(response.data, out_file, log_info, int(response.headers.get('Content-Length', '0')))
-
-		log_info('...downloaded')
 		log_info('extracting...')
-		with core.ZipFile(archive_name) as zf:
+		with core.ZipFile(source_path) as zf:
 			top = {item.split('/')[0] for item in zf.namelist()}
 			zipinfos = zf.infolist()
 
@@ -131,10 +122,29 @@ async def download_and_extract_zip(url: str, path: str, extract_folder: str|None
 
 		log_info('...extracted')
 
+	await blocking()
+
+
+async def download_and_extract_zip(url: str, path: str, extract_folder: str|None = None, *, log: core.Logger = core.stdio):
+	def log_info(value: str):
+		sublime.status_message(f'Debugger: {value}')
+		# core.call_soon_threadsafe(log.info, value)
+
+	archive_name = f'{path}.zip'
+	response = await request(url)
+
+	@core.run_in_executor
+	def copyfile():
+		with open(archive_name, 'wb') as out_file:
+			_copyfileobj(response.data, out_file, log_info, int(response.headers.get('Content-Length', '0')))
+
+		log_info('...downloaded')
+
 
 	log.info('Downloading {}'.format(url))
 
-	await blocking()
+	await copyfile()
+	await extract_zip(archive_name, path, extract_folder, *, log = log)
 	core.remove_file_or_dir(archive_name)
 
 
