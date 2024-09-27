@@ -1,0 +1,31 @@
+{
+    "folders":
+    [
+        {
+            "path": ".",
+        }
+    ],
+    "debugger_configurations":
+    [
+        {
+            "name": "Debug",
+            "type": "mylua",
+            "request": "attach",
+            "address": "127.0.0.1:12306",
+            "stopOnEntry": false,
+
+            "stopOnThreadEntry":false,
+            "luaVersion":"lua54",
+            "luaArch":"x86_64",
+            "console":"integratedTerminal",
+            "sourceCoding":"utf8",
+            "outputCapture":[],
+            "pathFormat":"path",
+            "inject":"none",
+            "client":true,
+            "configuration":{
+                "variables":{"showIntegerAsHex":false}
+            }
+        },
+    ],
+}

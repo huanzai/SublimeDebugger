@@ -144,7 +144,7 @@ async def download_and_extract_zip(url: str, path: str, extract_folder: str|None
 	log.info('Downloading {}'.format(url))
 
 	await copyfile()
-	await extract_zip(archive_name, path, extract_folder, *, log = log)
+	await extract_zip(archive_name, path, extract_folder, log = log)
 	core.remove_file_or_dir(archive_name)
 
 

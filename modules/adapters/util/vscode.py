@@ -10,6 +10,7 @@ from . import request
 
 import os
 import sublime
+import shutil
 
 
 _info_for_type: dict[str, AdapterInfo] = {}
@@ -27,6 +28,29 @@ class AdapterInstaller(dap.AdapterInstaller):
 	def remove(self):
 		super().remove()
 		self._package_info = None
+
+	async def install_local(self, source_path: str, *, log: core.Logger):
+		try:
+			del _info_for_type[self.type]
+		except KeyError:
+			...
+
+		path = self.temporary_install_path()
+		files = os.listdir(source_path)
+
+		for root, dirs, files in os.walk(source_path):
+			for file in files:
+				# 构建源文件路径
+				src_file = os.path.join(root, file)
+				# 构建目标文件路径
+				relative_path = os.path.relpath(root, source_path)
+				dest_file_dir = os.path.join(path, relative_path)
+				if not os.path.exists(dest_file_dir):
+				    os.makedirs(dest_file_dir)
+				dest_file = os.path.join(dest_file_dir, file)
+				# 拷贝文件
+				shutil.copy2(src_file, dest_file)
+
 
 	async def install_vsix(self, url: str, *, log: core.Logger):
 		try:

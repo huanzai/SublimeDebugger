@@ -9,6 +9,7 @@ projects = [
 	'examples/web/web.sublime-project',
 	'examples/elixir/elixir.sublime-project',
 	'examples/lua/lua.sublime-project',
+	'examples/mylua/mylua.sublime-project',
 	'examples/java/java.sublime-project',
 	'examples/emulicious_debugger/emulicious-debugger.sublime-project',
 ]

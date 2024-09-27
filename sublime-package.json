@@ -1,1 +1,1606 @@
-{}
+{
+  "contributions": {
+    "settings": [
+      {
+        "schema": {
+          "$id": "sublime://settings/debugger",
+          "definitions": {
+            "type": {
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Type of configuration.",
+                  "enum": [
+                    "lldb",
+                    "gdb",
+                    "chrome",
+                    "node",
+                    "msedge",
+                    "debugpy",
+                    "python",
+                    "java",
+                    "go",
+                    "php",
+                    "rdbg",
+                    "ruby",
+                    "ruby-debug",
+                    "elixir",
+                    "mix_task",
+                    "lua-local",
+                    "mylua",
+                    "firefox",
+                    "mock",
+                    "sublime",
+                    "emulicious-debugger"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "type_installed": {
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Type of configuration.",
+                  "enum": [
+                    "debugpy",
+                    "python",
+                    "java",
+                    "lua-local",
+                    "mylua"
+                  ],
+                  "errorMessage": "This adapter is not installed, install this adapter to get completions"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "debugpy": {
+              "properties": {
+                "request": {
+                  "type": "string",
+                  "description": "Request type of configuration.",
+                  "enum": [
+                    "attach",
+                    "launch"
+                  ]
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name of configuration which appears in the launch configuration drop down menu."
+                }
+              },
+              "required": [
+                "type",
+                "name",
+                "request"
+              ]
+            },
+            "debugpy.attach": {
+              "properties": {
+                "connect": {
+                  "label": "Attach by connecting to debugpy over a socket.",
+                  "properties": {
+                    "host": {
+                      "default": "127.0.0.1",
+                      "description": "Hostname or IP address to connect to.",
+                      "type": "string"
+                    },
+                    "port": {
+                      "description": "Port to connect to.",
+                      "type": [
+                        "number",
+                        "string"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "port"
+                  ],
+                  "type": "object"
+                },
+                "debugAdapterPath": {
+                  "description": "Path (fully qualified) to the python debug adapter executable.",
+                  "type": "string"
+                },
+                "django": {
+                  "default": false,
+                  "description": "Django debugging.",
+                  "type": "boolean"
+                },
+                "jinja": {
+                  "default": null,
+                  "description": "Jinja template debugging (e.g. Flask).",
+                  "enum": [
+                    false,
+                    null,
+                    true
+                  ]
+                },
+                "justMyCode": {
+                  "default": true,
+                  "description": "If true, show and debug only user-written code. If false, show and debug all code, including library calls.",
+                  "type": "boolean"
+                },
+                "listen": {
+                  "label": "Attach by listening for incoming socket connection from debugpy",
+                  "properties": {
+                    "host": {
+                      "default": "127.0.0.1",
+                      "description": "Hostname or IP address of the interface to listen on.",
+                      "type": "string"
+                    },
+                    "port": {
+                      "description": "Port to listen on.",
+                      "type": [
+                        "number",
+                        "string"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "port"
+                  ],
+                  "type": "object"
+                },
+                "logToFile": {
+                  "default": false,
+                  "description": "Enable logging of debugger events to a log file. This file can be found in the debugpy extension install folder.",
+                  "type": "boolean"
+                },
+                "pathMappings": {
+                  "default": [],
+                  "items": {
+                    "label": "Path mapping",
+                    "properties": {
+                      "localRoot": {
+                        "default": "${workspaceFolder}",
+                        "label": "Local source root.",
+                        "type": "string"
+                      },
+                      "remoteRoot": {
+                        "default": "",
+                        "label": "Remote source root.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "localRoot",
+                      "remoteRoot"
+                    ],
+                    "type": "object"
+                  },
+                  "label": "Path mappings.",
+                  "type": "array"
+                },
+                "processId": {
+                  "anyOf": [
+                    {
+                      "default": "${command:pickProcess}",
+                      "description": "Use process picker to select a process to attach, or Process ID as integer.",
+                      "enum": [
+                        "${command:pickProcess}"
+                      ]
+                    },
+                    {
+                      "description": "ID of the local process to attach to.",
+                      "type": "integer"
+                    }
+                  ]
+                },
+                "redirectOutput": {
+                  "default": true,
+                  "description": "Redirect output.",
+                  "type": "boolean"
+                },
+                "showReturnValue": {
+                  "default": true,
+                  "description": "Show return value of functions when stepping.",
+                  "type": "boolean"
+                },
+                "subProcess": {
+                  "default": false,
+                  "description": "Whether to enable Sub Process debugging",
+                  "type": "boolean"
+                },
+                "consoleName": {
+                  "default": "Python Debug Console",
+                  "description": "Display name of the debug console or terminal",
+                  "type": "string"
+                },
+                "pre_debug_task": {
+                  "type": "string",
+                  "description": "Name of task to run before debugging starts"
+                },
+                "post_debug_task": {
+                  "type": "string",
+                  "description": "name of task to run after debugging ends"
+                },
+                "osx": {
+                  "$ref": "sublime://settings/debugger#/definitions/debugpy.attach",
+                  "description": "MacOS specific configuration attributes"
+                },
+                "windows": {
+                  "$ref": "sublime://settings/debugger#/definitions/debugpy.attach",
+                  "description": "Windows specific configuration attributes"
+                },
+                "linux": {
+                  "$ref": "sublime://settings/debugger#/definitions/debugpy.attach",
+                  "description": "Linux specific configuration attributes"
+                }
+              },
+              "type": "object"
+            },
+            "debugpy.launch": {
+              "properties": {
+                "args": {
+                  "default": [],
+                  "description": "Command line arguments passed to the program. For string type arguments, it will pass through the shell as is, and therefore all shell variable expansions will apply. But for the array type, the values will be shell-escaped.",
+                  "items": {
+                    "type": "string"
+                  },
+                  "anyOf": [
+                    {
+                      "default": "${command:pickArgs}",
+                      "enum": [
+                        "${command:pickArgs}"
+                      ]
+                    },
+                    {
+                      "type": [
+                        "array",
+                        "string"
+                      ]
+                    }
+                  ]
+                },
+                "autoReload": {
+                  "default": {},
+                  "description": "Configures automatic reload of code on edit.",
+                  "properties": {
+                    "enable": {
+                      "default": false,
+                      "description": "Automatically reload code on edit.",
+                      "type": "boolean"
+                    },
+                    "exclude": {
+                      "default": [
+                        "**/.git/**",
+                        "**/.metadata/**",
+                        "**/__pycache__/**",
+                        "**/node_modules/**",
+                        "**/site-packages/**"
+                      ],
+                      "description": "Glob patterns of paths to exclude from auto reload.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "include": {
+                      "default": [
+                        "**/*.py",
+                        "**/*.pyw"
+                      ],
+                      "description": "Glob patterns of paths to include in auto reload.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                },
+                "console": {
+                  "default": "integratedTerminal",
+                  "description": "Where to launch the debug target: internal console, integrated terminal, or external terminal.",
+                  "enum": [
+                    "externalTerminal",
+                    "integratedTerminal",
+                    "internalConsole"
+                  ]
+                },
+                "cwd": {
+                  "default": "${workspaceFolder}",
+                  "description": "Absolute path to the working directory of the program being debugged. Default is the root directory of the file (leave empty).",
+                  "type": "string"
+                },
+                "debugAdapterPath": {
+                  "description": "Path (fully qualified) to the Python debug adapter executable.",
+                  "type": "string"
+                },
+                "autoStartBrowser": {
+                  "default": false,
+                  "description": "Open external browser to launch the application",
+                  "type": "boolean"
+                },
+                "django": {
+                  "default": false,
+                  "description": "Django debugging.",
+                  "type": "boolean"
+                },
+                "env": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "default": {},
+                  "description": "Environment variables defined as a key value pair. Property ends up being the Environment Variable and the value of the property ends up being the value of the Env Variable.",
+                  "type": "object"
+                },
+                "envFile": {
+                  "default": "${workspaceFolder}/.env",
+                  "description": "Absolute path to a file containing environment variable definitions.",
+                  "type": "string"
+                },
+                "gevent": {
+                  "default": false,
+                  "description": "Enable debugging of gevent monkey-patched code.",
+                  "type": "boolean"
+                },
+                "jinja": {
+                  "default": null,
+                  "description": "Jinja template debugging (e.g. Flask).",
+                  "enum": [
+                    false,
+                    null,
+                    true
+                  ]
+                },
+                "justMyCode": {
+                  "default": true,
+                  "description": "Debug only user-written code.",
+                  "type": "boolean"
+                },
+                "logToFile": {
+                  "default": false,
+                  "description": "Enable logging of debugger events to a log file. This file can be found in the debugpy extension install folder.",
+                  "type": "boolean"
+                },
+                "module": {
+                  "default": "",
+                  "description": "Name of the module to be debugged.",
+                  "type": "string"
+                },
+                "pathMappings": {
+                  "default": [],
+                  "items": {
+                    "label": "Path mapping",
+                    "properties": {
+                      "localRoot": {
+                        "default": "${workspaceFolder}",
+                        "label": "Local source root.",
+                        "type": "string"
+                      },
+                      "remoteRoot": {
+                        "default": "",
+                        "label": "Remote source root.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "localRoot",
+                      "remoteRoot"
+                    ],
+                    "type": "object"
+                  },
+                  "label": "Path mappings.",
+                  "type": "array"
+                },
+                "program": {
+                  "default": "${file}",
+                  "description": "Absolute path to the program.",
+                  "type": "string"
+                },
+                "purpose": {
+                  "default": [],
+                  "description": "Tells extension to use this configuration for test debugging, or when using debug-in-terminal command.",
+                  "items": {
+                    "enum": [
+                      "debug-test",
+                      "debug-in-terminal"
+                    ],
+                    "enumDescriptions": [
+                      "Use this configuration while debugging tests using test view or test debug commands.",
+                      "Use this configuration while debugging a file using debug in terminal button in the editor."
+                    ]
+                  },
+                  "type": "array"
+                },
+                "pyramid": {
+                  "default": false,
+                  "description": "Whether debugging Pyramid applications.",
+                  "type": "boolean"
+                },
+                "python": {
+                  "default": "${command:python.interpreterPath}",
+                  "description": "Absolute path to the Python interpreter executable; overrides workspace configuration if set.",
+                  "type": "string"
+                },
+                "pythonArgs": {
+                  "default": [],
+                  "description": "Command-line arguments passed to the Python interpreter. To pass arguments to the debug target, use \"args\".",
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "redirectOutput": {
+                  "default": true,
+                  "description": "Redirect output.",
+                  "type": "boolean"
+                },
+                "showReturnValue": {
+                  "default": true,
+                  "description": "Show return value of functions when stepping.",
+                  "type": "boolean"
+                },
+                "stopOnEntry": {
+                  "default": false,
+                  "description": "Automatically stop after launch.",
+                  "type": "boolean"
+                },
+                "subProcess": {
+                  "default": false,
+                  "description": "Whether to enable Sub Process debugging.",
+                  "type": "boolean"
+                },
+                "sudo": {
+                  "default": false,
+                  "description": "Running debug program under elevated permissions (on Unix).",
+                  "type": "boolean"
+                },
+                "guiEventLoop": {
+                  "default": "matplotlib",
+                  "description": "The GUI event loop that's going to run. Possible values: \"matplotlib\", \"wx\", \"qt\", \"none\", or a custom function that'll be imported and run.",
+                  "type": "string"
+                },
+                "consoleName": {
+                  "default": "Python Debug Console",
+                  "description": "Display name of the debug console or terminal",
+                  "type": "string"
+                },
+                "pre_debug_task": {
+                  "type": "string",
+                  "description": "Name of task to run before debugging starts"
+                },
+                "post_debug_task": {
+                  "type": "string",
+                  "description": "name of task to run after debugging ends"
+                },
+                "osx": {
+                  "$ref": "sublime://settings/debugger#/definitions/debugpy.launch",
+                  "description": "MacOS specific configuration attributes"
+                },
+                "windows": {
+                  "$ref": "sublime://settings/debugger#/definitions/debugpy.launch",
+                  "description": "Windows specific configuration attributes"
+                },
+                "linux": {
+                  "$ref": "sublime://settings/debugger#/definitions/debugpy.launch",
+                  "description": "Linux specific configuration attributes"
+                }
+              },
+              "type": "object"
+            },
+            "java": {
+              "properties": {
+                "request": {
+                  "type": "string",
+                  "description": "Request type of configuration.",
+                  "enum": [
+                    "launch",
+                    "attach"
+                  ]
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name of configuration which appears in the launch configuration drop down menu."
+                }
+              },
+              "required": [
+                "type",
+                "name",
+                "request"
+              ]
+            },
+            "java.launch": {
+              "required": [
+                "mainClass"
+              ],
+              "properties": {
+                "projectName": {
+                  "type": "string",
+                  "description": "The preferred project in which the debugger searches for classes. There could be duplicated class names in different projects. This setting also works when the debugger looks for the specified main class when launching a program. It is required for expression evaluation.",
+                  "default": ""
+                },
+                "mainClass": {
+                  "type": "string",
+                  "description": "The fully qualified class name (e.g. [java module name/]com.xyz.MainApp) or the java file path of the program entry.",
+                  "default": ""
+                },
+                "javaExec": {
+                  "type": "string",
+                  "description": "The path to java executable to use. If unset project JDK's java executable is used.",
+                  "default": ""
+                },
+                "args": {
+                  "type": [
+                    "array",
+                    "string"
+                  ],
+                  "description": "The command line arguments passed to the program.",
+                  "default": ""
+                },
+                "vmArgs": {
+                  "type": [
+                    "array",
+                    "string"
+                  ],
+                  "description": "The extra options and system properties for the JVM (e.g. -Xms<size> -Xmx<size> -D<name>=<value>).",
+                  "default": ""
+                },
+                "modulePaths": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "$Auto",
+                          "$Runtime",
+                          "$Test",
+                          "!<path>"
+                        ],
+                        "enumDescriptions": [
+                          "Automatically resolve the module paths of current project.",
+                          "The module paths within 'runtime' scope of current project.",
+                          "The module paths within 'test' scope of current project.",
+                          "The path after '!' will be excluded from the modulePaths."
+                        ]
+                      },
+                      "string"
+                    ]
+                  },
+                  "description": "The modulepaths for launching the JVM. If not specified, the debugger will automatically resolve from current project.",
+                  "default": []
+                },
+                "classPaths": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "$Auto",
+                          "$Runtime",
+                          "$Test",
+                          "!<path>"
+                        ],
+                        "enumDescriptions": [
+                          "Automatically resolve the classpaths of current project.",
+                          "The classpaths within 'runtime' scope of current project.",
+                          "The classpaths within 'test' scope of current project.",
+                          "The path after '!' will be excluded from the classpaths."
+                        ]
+                      },
+                      "string"
+                    ]
+                  },
+                  "description": "The classpaths for launching the JVM. If not specified, the debugger will automatically resolve from current project.",
+                  "default": []
+                },
+                "sourcePaths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "The extra source directories of the program. The debugger looks for source code from project settings by default. This option allows the debugger to look for source code in extra directories.",
+                  "default": []
+                },
+                "encoding": {
+                  "type": "string",
+                  "description": "The file.encoding setting for the JVM. Possible values can be found in https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html.",
+                  "default": "UTF-8"
+                },
+                "cwd": {
+                  "type": "string",
+                  "description": "The working directory of the program. Defaults to the current workspace root.",
+                  "default": "${workspaceFolder}"
+                },
+                "env": {
+                  "type": "object",
+                  "description": "The extra environment variables for the program.",
+                  "default": {}
+                },
+                "envFile": {
+                  "type": "string",
+                  "description": "Absolute path to a file containing environment variable definitions.",
+                  "default": "${workspaceFolder}/.env"
+                },
+                "stopOnEntry": {
+                  "type": "boolean",
+                  "description": "Automatically pause the program after launching.",
+                  "default": true
+                },
+                "console": {
+                  "type": "string",
+                  "enum": [
+                    "internalConsole",
+                    "integratedTerminal",
+                    "externalTerminal"
+                  ],
+                  "enumDescriptions": [
+                    "VS Code debug console (input stream not supported).",
+                    "VS Code integrated terminal.",
+                    "External terminal that can be configured in user settings."
+                  ],
+                  "description": "The specified console to launch the program.",
+                  "default": "integratedTerminal"
+                },
+                "shortenCommandLine": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "jarmanifest",
+                    "argfile",
+                    "auto"
+                  ],
+                  "enumDescriptions": [
+                    "Launch the program with the standard command line 'java [options] classname [args]'.",
+                    "Generate the classpath parameters to a temporary classpath.jar file, and launch the program with the command line 'java -cp classpath.jar classname [args]'.",
+                    "Generate the classpath parameters to a temporary argument file, and launch the program with the command line 'java @argfile [args]'. This value only applies to Java 9 and higher.",
+                    "Automatically detect the command line length and determine whether to shorten the command line via an appropriate approach."
+                  ],
+                  "description": "When the project has long classpath or big VM arguments, the command line to launch the program may exceed the maximum command line string limitation allowed by the OS. This configuration item provides multiple approaches to shorten the command line.",
+                  "default": "auto"
+                },
+                "stepFilters": {
+                  "type": "object",
+                  "description": "Skip specified classes or methods when stepping.",
+                  "default": {
+                    "skipClasses": [
+                      "$JDK",
+                      "junit.*"
+                    ],
+                    "skipSynthetics": false,
+                    "skipStaticInitializers": false,
+                    "skipConstructors": false
+                  },
+                  "properties": {
+                    "skipClasses": {
+                      "type": "array",
+                      "description": "Skip the specified classes when stepping. You could use the built-in variables such as '$JDK' and '$Libraries' to skip a group of classes, or add a specific class name expression, e.g. java.*, *.Foo",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "enum": [
+                              "$JDK",
+                              "$Libraries",
+                              "java.lang.ClassLoader",
+                              ""
+                            ],
+                            "enumDescriptions": [
+                              "Skip the JDK classes from the default system bootstrap classpath, such as rt.jar, jrt-fs.jar.",
+                              "Skip the classes from application libraries, such as Maven, Gradle dependencies.",
+                              "Skip the class loaders.",
+                              "Skip the specified classes. Class names should be fully qualified. Wildcard is supported, e.g. java.*, *.Foo"
+                            ]
+                          },
+                          "string"
+                        ]
+                      },
+                      "default": [
+                        "$JDK",
+                        "junit.*"
+                      ]
+                    },
+                    "skipSynthetics": {
+                      "type": "boolean",
+                      "description": "Skip synthetic methods when stepping.",
+                      "default": true
+                    },
+                    "skipStaticInitializers": {
+                      "type": "boolean",
+                      "description": "Skip static initializer methods when stepping.",
+                      "default": true
+                    },
+                    "skipConstructors": {
+                      "type": "boolean",
+                      "description": "Skip constructor methods when stepping.",
+                      "default": true
+                    }
+                  }
+                },
+                "pre_debug_task": {
+                  "type": "string",
+                  "description": "Name of task to run before debugging starts"
+                },
+                "post_debug_task": {
+                  "type": "string",
+                  "description": "name of task to run after debugging ends"
+                },
+                "osx": {
+                  "$ref": "sublime://settings/debugger#/definitions/java.launch",
+                  "description": "MacOS specific configuration attributes"
+                },
+                "windows": {
+                  "$ref": "sublime://settings/debugger#/definitions/java.launch",
+                  "description": "Windows specific configuration attributes"
+                },
+                "linux": {
+                  "$ref": "sublime://settings/debugger#/definitions/java.launch",
+                  "description": "Linux specific configuration attributes"
+                }
+              },
+              "type": "object"
+            },
+            "java.attach": {
+              "properties": {
+                "hostName": {
+                  "type": "string",
+                  "default": "localhost",
+                  "description": "The host name or ip address of remote debuggee."
+                },
+                "port": {
+                  "type": [
+                    "number",
+                    "string"
+                  ],
+                  "description": "The debug port of remote debuggee."
+                },
+                "processId": {
+                  "anyOf": [
+                    {
+                      "enum": [
+                        "${command:PickJavaProcess}"
+                      ],
+                      "description": "Use process picker to select a process to attach, or Process ID as integer.",
+                      "default": "${command:PickJavaProcess}"
+                    },
+                    {
+                      "type": "integer",
+                      "description": "ID of the local process to attach to."
+                    }
+                  ]
+                },
+                "timeout": {
+                  "type": "number",
+                  "default": 30000,
+                  "description": "Timeout value before reconnecting, in milliseconds (default to 30000ms)."
+                },
+                "sourcePaths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "default": [],
+                  "description": "The extra source directories of the program. The debugger looks for source code from project settings by default. This option allows the debugger to look for source code in extra directories."
+                },
+                "projectName": {
+                  "type": "string",
+                  "description": "The preferred project in which the debugger searches for classes. There could be duplicated class names in different projects.",
+                  "default": ""
+                },
+                "stepFilters": {
+                  "type": "object",
+                  "description": "Skip specified classes or methods when stepping.",
+                  "default": {
+                    "skipClasses": [
+                      "$JDK",
+                      "junit.*"
+                    ],
+                    "skipSynthetics": false,
+                    "skipStaticInitializers": false,
+                    "skipConstructors": false
+                  },
+                  "properties": {
+                    "skipClasses": {
+                      "type": "array",
+                      "description": "Skip the specified classes when stepping. You could use the built-in variables such as '$JDK' and '$Libraries' to skip a group of classes, or add a specific class name expression, e.g. java.*, *.Foo",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "enum": [
+                              "$JDK",
+                              "$Libraries",
+                              "java.lang.ClassLoader",
+                              ""
+                            ],
+                            "enumDescriptions": [
+                              "Skip the JDK classes from the default system bootstrap classpath, such as rt.jar, jrt-fs.jar.",
+                              "Skip the classes from application libraries, such as Maven, Gradle dependencies.",
+                              "Skip the class loaders.",
+                              "Skip the specified classes. Class names should be fully qualified. Wildcard is supported, e.g. java.*, *.Foo"
+                            ]
+                          },
+                          "string"
+                        ]
+                      },
+                      "default": [
+                        "$JDK",
+                        "junit.*"
+                      ]
+                    },
+                    "skipSynthetics": {
+                      "type": "boolean",
+                      "description": "Skip synthetic methods when stepping.",
+                      "default": false
+                    },
+                    "skipStaticInitializers": {
+                      "type": "boolean",
+                      "description": "Skip static initializer methods when stepping.",
+                      "default": false
+                    },
+                    "skipConstructors": {
+                      "type": "boolean",
+                      "description": "Skip constructor methods when stepping.",
+                      "default": false
+                    }
+                  }
+                },
+                "pre_debug_task": {
+                  "type": "string",
+                  "description": "Name of task to run before debugging starts"
+                },
+                "post_debug_task": {
+                  "type": "string",
+                  "description": "name of task to run after debugging ends"
+                },
+                "osx": {
+                  "$ref": "sublime://settings/debugger#/definitions/java.attach",
+                  "description": "MacOS specific configuration attributes"
+                },
+                "windows": {
+                  "$ref": "sublime://settings/debugger#/definitions/java.attach",
+                  "description": "Windows specific configuration attributes"
+                },
+                "linux": {
+                  "$ref": "sublime://settings/debugger#/definitions/java.attach",
+                  "description": "Linux specific configuration attributes"
+                }
+              },
+              "type": "object"
+            },
+            "lua-local": {
+              "properties": {
+                "request": {
+                  "type": "string",
+                  "description": "Request type of configuration.",
+                  "enum": [
+                    "launch"
+                  ]
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name of configuration which appears in the launch configuration drop down menu."
+                }
+              },
+              "required": [
+                "type",
+                "name",
+                "request"
+              ]
+            },
+            "lua-local.launch": {
+              "properties": {
+                "scriptRoots": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Alternate paths to find lua scripts"
+                },
+                "breakInCoroutines": {
+                  "type": "boolean",
+                  "description": "Break on errors inside of coroutines",
+                  "default": true
+                },
+                "scriptFiles": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Glob pattern specifying Lua scripts to be debugged (required for breakpoints in source mapped files)"
+                },
+                "ignorePatterns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Lua patterns specifying scripts to be ignored when stepping"
+                },
+                "verbose": {
+                  "type": "boolean",
+                  "description": "Enable verbose output",
+                  "default": false
+                },
+                "stopOnEntry": {
+                  "type": "boolean",
+                  "description": "Pause debugging as soon as debugger attaches to program",
+                  "default": false
+                },
+                "cwd": {
+                  "type": "string",
+                  "description": "Working directory to launch Lua in",
+                  "default": "${workspaceFolder}"
+                },
+                "env": {
+                  "type": "object",
+                  "description": "Environment variables to set",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                },
+                "args": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Arguments to pass to the program",
+                  "default": []
+                },
+                "program": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "lua": {
+                          "type": "string",
+                          "description": "Lua stand-alone interpreter to use",
+                          "default": "lua"
+                        },
+                        "file": {
+                          "type": "string",
+                          "description": "The entry point file of the program",
+                          "default": "${file}"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "command": {
+                          "type": "string",
+                          "description": "The custom command to run"
+                        }
+                      },
+                      "required": [
+                        "command"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                },
+                "pre_debug_task": {
+                  "type": "string",
+                  "description": "Name of task to run before debugging starts"
+                },
+                "post_debug_task": {
+                  "type": "string",
+                  "description": "name of task to run after debugging ends"
+                },
+                "osx": {
+                  "$ref": "sublime://settings/debugger#/definitions/lua-local.launch",
+                  "description": "MacOS specific configuration attributes"
+                },
+                "windows": {
+                  "$ref": "sublime://settings/debugger#/definitions/lua-local.launch",
+                  "description": "Windows specific configuration attributes"
+                },
+                "linux": {
+                  "$ref": "sublime://settings/debugger#/definitions/lua-local.launch",
+                  "description": "Linux specific configuration attributes"
+                }
+              },
+              "type": "object"
+            },
+            "mylua": {
+              "properties": {
+                "request": {
+                  "type": "string",
+                  "description": "Request type of configuration.",
+                  "enum": []
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name of configuration which appears in the launch configuration drop down menu."
+                }
+              },
+              "required": [
+                "type",
+                "name",
+                "request"
+              ]
+            },
+            "debugger_configuration": {
+              "defaultSnippets": [
+                {
+                  "label": "Python: Current File",
+                  "body": {
+                    "name": "Python: Current File",
+                    "type": "python",
+                    "request": "launch",
+                    "program": "\\${file}"
+                  }
+                },
+                {
+                  "label": "Python: Attach using process id",
+                  "body": {
+                    "name": "Python: Attach using process id",
+                    "type": "python",
+                    "request": "launch",
+                    "processId": "${1:process id}"
+                  }
+                },
+                {
+                  "label": "Java: Launch Program",
+                  "description": "Add a new configuration for launching a java program.",
+                  "body": {
+                    "type": "java",
+                    "name": "Launch Java Program",
+                    "request": "launch",
+                    "mainClass": ""
+                  }
+                },
+                {
+                  "label": "Java: Launch Program in External Terminal",
+                  "description": "Add a new configuration for launching a java program in the external terminal.",
+                  "body": {
+                    "type": "java",
+                    "name": "Launch External Terminal",
+                    "request": "launch",
+                    "console": "externalTerminal",
+                    "mainClass": ""
+                  }
+                },
+                {
+                  "label": "Java: Launch Program in Current File",
+                  "description": "Add a new configuration for launching current java file.",
+                  "body": {
+                    "type": "java",
+                    "name": "Launch Current File",
+                    "request": "launch",
+                    "mainClass": "^\"\\${file}\""
+                  }
+                },
+                {
+                  "label": "Java: Launch Program with Arguments Prompt",
+                  "description": "Add a new configuration for launching a java program with arguments prompt.",
+                  "body": {
+                    "type": "java",
+                    "name": "Launch with Arguments Prompt",
+                    "request": "launch",
+                    "mainClass": "",
+                    "args": "^\"\\${command:SpecifyProgramArgs}\""
+                  }
+                },
+                {
+                  "label": "Java: Attach",
+                  "description": "Add a new configuration for attaching to a running java program.",
+                  "body": {
+                    "type": "java",
+                    "name": "Attach",
+                    "request": "attach",
+                    "hostName": "localhost",
+                    "port": "<debug port of the debuggee>"
+                  }
+                },
+                {
+                  "label": "Java: Attach to Process",
+                  "description": "Use process picker to select a Java process to attach to.",
+                  "body": {
+                    "type": "java",
+                    "request": "attach",
+                    "name": "Attach by Process ID",
+                    "processId": "^\"\\${command:PickJavaProcess}\""
+                  }
+                },
+                {
+                  "label": "Java: Attach to Remote Program",
+                  "description": "Add a new configuration for attaching to a remote java program.",
+                  "body": {
+                    "type": "java",
+                    "name": "Attach to Remote Program",
+                    "request": "attach",
+                    "hostName": "<The host name or ip address of remote debuggee>",
+                    "port": "<debug port of remote debuggee>"
+                  }
+                }
+              ],
+              "allOf": [
+                {
+                  "if": {
+                    "$ref": "sublime://settings/debugger#/definitions/type"
+                  },
+                  "then": {
+                    "$ref": "sublime://settings/debugger#/definitions/type_installed"
+                  },
+                  "else": {
+                    "$ref": "sublime://settings/debugger#/definitions/type"
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "debugpy"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "$ref": "sublime://settings/debugger#/definitions/debugpy"
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "python"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "$ref": "sublime://settings/debugger#/definitions/debugpy"
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "debugpy"
+                      },
+                      "request": {
+                        "const": "attach"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "type",
+                      "request"
+                    ]
+                  },
+                  "then": {
+                    "unevaluatedProperties": false,
+                    "allOf": [
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/type"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/debugpy"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/debugpy.attach"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "python"
+                      },
+                      "request": {
+                        "const": "attach"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "type",
+                      "request"
+                    ]
+                  },
+                  "then": {
+                    "unevaluatedProperties": false,
+                    "allOf": [
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/type"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/debugpy"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/debugpy.attach"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "debugpy"
+                      },
+                      "request": {
+                        "const": "launch"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "type",
+                      "request"
+                    ]
+                  },
+                  "then": {
+                    "unevaluatedProperties": false,
+                    "allOf": [
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/type"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/debugpy"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/debugpy.launch"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "python"
+                      },
+                      "request": {
+                        "const": "launch"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "type",
+                      "request"
+                    ]
+                  },
+                  "then": {
+                    "unevaluatedProperties": false,
+                    "allOf": [
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/type"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/debugpy"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/debugpy.launch"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "java"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "$ref": "sublime://settings/debugger#/definitions/java"
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "java"
+                      },
+                      "request": {
+                        "const": "launch"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "type",
+                      "request"
+                    ]
+                  },
+                  "then": {
+                    "unevaluatedProperties": false,
+                    "allOf": [
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/type"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/java"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/java.launch"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "java"
+                      },
+                      "request": {
+                        "const": "attach"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "type",
+                      "request"
+                    ]
+                  },
+                  "then": {
+                    "unevaluatedProperties": false,
+                    "allOf": [
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/type"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/java"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/java.attach"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "lua-local"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "$ref": "sublime://settings/debugger#/definitions/lua-local"
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "lua-local"
+                      },
+                      "request": {
+                        "const": "launch"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "type",
+                      "request"
+                    ]
+                  },
+                  "then": {
+                    "unevaluatedProperties": false,
+                    "allOf": [
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/type"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/lua-local"
+                      },
+                      {
+                        "$ref": "sublime://settings/debugger#/definitions/lua-local.launch"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "mylua"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "$ref": "sublime://settings/debugger#/definitions/mylua"
+                  }
+                }
+              ]
+            },
+            "debugger_compound": {
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Name of compound which appears in the launch configuration drop down menu."
+                },
+                "configurations": {
+                  "type": "array",
+                  "description": "Names of configurations that compose this compound configuration",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "name",
+                "configurations"
+              ]
+            },
+            "debugger_task": {
+              "allOf": [
+                {
+                  "$ref": "sublime://schemas/sublime-build"
+                },
+                {
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Name of task"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "file_patterns": [
+          "/*.sublime-project"
+        ],
+        "schema": {
+          "properties": {
+            "debugger_configurations": {
+              "description": "Debugger Configurations",
+              "type": "array",
+              "items": {
+                "$ref": "sublime://settings/debugger#/definitions/debugger_configuration"
+              }
+            },
+            "debugger_tasks": {
+              "description": "Debugger Tasks",
+              "type": "array",
+              "items": {
+                "$ref": "sublime://settings/debugger#/definitions/debugger_task"
+              }
+            },
+            "debugger_compounds": {
+              "description": "Debugger Compounds",
+              "type": "array",
+              "items": {
+                "$ref": "sublime://settings/debugger#/definitions/debugger_compound"
+              }
+            }
+          }
+        }
+      },
+      {
+        "file_patterns": [
+          "Debugger.sublime-settings"
+        ],
+        "schema": {
+          "additionalProperties": false,
+          "properties": {
+            "open_at_startup": {
+              "type": "boolean",
+              "description": "Open the debugger automatically when a project that is set up for debugging"
+            },
+            "always_keep_visible": {
+              "type": "boolean",
+              "description": "Always keep the debugger panel visible"
+            },
+            "font_size": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Change the font size of the debugger ui. Defaults to the font size in your preferences."
+            },
+            "internal_font_scale": {
+              "type": "number",
+              "description": "Expected values of around 0.95 to 1.05. Only change this if the text/images/content are not aligning correctly within the panels (could cause the last panel to be clipped)."
+            },
+            "internal_width_modifier": {
+              "type": "number",
+              "description": "Expected values of around 0 to -5. Only change this if the size of the panels is too large and the last panel is cropped off (adjust internal_font_scale first if text/images/content are not aligned correctly). Negative values make the panels smaller. Postive make them bigger."
+            },
+            "external_terminal": {
+              "type": "string",
+              "description": "Which external terminal should be used when an adapter requests an external terminal"
+            },
+            "minimum_console_height": {
+              "type": "number",
+              "description": "Controls the minimum height of the debugger output panels in lines"
+            },
+            "development": {
+              "type": "boolean",
+              "description": "Additional console logs and some new features are locked behind this flag"
+            },
+            "node": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Sets a specific path for node if not set adapters that require node to run will use whatever is in your path"
+            },
+            "integrated_output_panels": {
+              "type": [
+                "object",
+                "array"
+              ],
+              "description": "Output panels outside of the debugger can be integrated into the tabbed debugger interface (note: In some cases output panels may cause issues and not work correctly depending on who owns them)"
+            },
+            "installed_packages": {
+              "type": [
+                "object",
+                "array"
+              ],
+              "description": "Some debug adapters require certain packages to be installed via package control. If you have installed these package outside of package control then you can add them to this list and they will be treated as if they are installed."
+            },
+            "global_debugger_configurations": {
+              "type": "array",
+              "items": {
+                "$ref": "sublime://settings/debugger#/definitions/debugger_configuration"
+              },
+              "description": "Global debugger configurations that are accessible from every project"
+            },
+            "global_debugger_tasks": {
+              "type": "array",
+              "items": {
+                "$ref": "sublime://settings/debugger#/definitions/debugger_task"
+              },
+              "description": "Global debugger tasks that are accessible from every project"
+            },
+            "global_debugger_compounds": {
+              "type": "array",
+              "items": {
+                "$ref": "sublime://settings/debugger#/definitions/debugger_compound"
+              },
+              "description": "Global debugger compounds that are accessible from every project"
+            },
+            "github_personal_access_token": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Personal access token used for github api requests. If you are testing installing adapters you may need to set this to have higher api limits if you are getting 429 errors."
+            },
+            "lldb_display_format": {
+              "type": "string",
+              "description": ""
+            },
+            "lldb_dereference_pointers": {
+              "type": "boolean",
+              "description": ""
+            },
+            "lldb_library": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Which lldb library to use"
+            },
+            "go_dlv": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Sets a specific path for dlv if not set go will use whatever is in your path"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
