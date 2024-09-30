@@ -1,1 +1,604 @@
-{}
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"LUA",
+				"LUADBG_TTHREAD"
+			],
+			[
+				"copy",
+				"copy_from_dbg_unprotected"
+			],
+			[
+				"rawcor",
+				"rawcoroutinecreate"
+			],
+			[
+				"update",
+				"update_parameters_with_gd"
+			],
+			[
+				"the",
+				"theta_minus"
+			],
+			[
+				"gri",
+				"gradient_check_n"
+			],
+			[
+				"forw",
+				"forward_propagation_n"
+			],
+			[
+				"par",
+				"parameters_values"
+			],
+			[
+				"th",
+				"theta_plus"
+			],
+			[
+				"pre",
+				"predictions_test"
+			],
+			[
+				"backward_",
+				"backward_propagation_with_dropout"
+			],
+			[
+				"back",
+				"backward_propagation_with_regularization"
+			],
+			[
+				"backward_pro",
+				"backward_propagation_with_regularization"
+			],
+			[
+				"tra",
+				"train_X"
+			],
+			[
+				"predic",
+				"predictions_train"
+			],
+			[
+				"initialize_pa",
+				"initialize_parameters_zeros"
+			],
+			[
+				"dA_",
+				"dA_prev_temp"
+			],
+			[
+				"linear",
+				"linear_activation_backward"
+			],
+			[
+				"linear_ac",
+				"linear_activation_backward"
+			],
+			[
+				"linear_bac",
+				"linear_backward"
+			],
+			[
+				"linear_acti",
+				"linear_activation_forward"
+			],
+			[
+				"linear_act",
+				"linear_activation_cache"
+			],
+			[
+				"linear_activation",
+				"linear_activation_forward"
+			],
+			[
+				"ini",
+				"initialize_parameters_deep"
+			],
+			[
+				"Y_pre",
+				"Y_prediction_train"
+			],
+			[
+				"train_",
+				"train_set_x_orig"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "debugger.lua",
+			"settings":
+			{
+				"buffer_size": 1402,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"debugg",
+				"Debugger: Open"
+			],
+			[
+				"debugger",
+				"Debugger: Open"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				":",
+				":$ - EOF"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/examples/mylua"
+	],
+	"file_history":
+	[
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/examples/mylua/debugger.lua",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/examples/mylua/main.lua",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/modules/adapters/util/request.py",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/modules/dap/adapter.py",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/modules/adapters/util/vscode.py",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/modules/adapters/__init__.py",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/modules/dap/session.py",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/modules/debugger.py",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/modules/dap/transport.py",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/modules/dap/transports.py",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/modules/menus.py",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/examples/mylua/mylua.sublime-project",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/examples/__init__.py",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/modules/adapters/mylua.py",
+		"/D/subliime-debugger-test/test.lua",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/README.md",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/dependencies.json",
+		"/D/sublime-debugger-test.sublime-project",
+		"/D/local-lua-debugger-vscode/debugger/protocol.d.ts",
+		"/D/local-lua-debugger-vscode/debugger/send.ts",
+		"/D/local-lua-debugger-vscode/extension/luaDebugSession.ts",
+		"/D/local-lua-debugger-vscode/package.json",
+		"/D/lua-debug/src/launcher/util/log.h",
+		"/D/lua-debug/compile/common/lua-debug.lua",
+		"/D/lua-debug/compile/windows/make.lua",
+		"/D/lua-debug/compile/windows/runtime.lua",
+		"/D/lua-debug/publish/package.json",
+		"/D/lua-debug/extension/script/backend/worker/breakpoint.lua",
+		"/D/lua-debug/3rd/bee.lua/binding/lua_channel.cpp",
+		"/D/lua-debug/extension/script/backend/worker/source.lua",
+		"/D/lua-debug/extension/script/debugger.lua",
+		"/D/lua-debug/src/luadebug/rdebug_visitor.cpp",
+		"/D/lua-debug/src/luadebug/rdebug_hookmgr.cpp",
+		"/D/lua-debug/3rd/bee.lua/bee/sys/path_win.cpp",
+		"/D/lua-debug/3rd/bee.lua/binding/lua_sys.cpp",
+		"/D/lua-debug/extension/script/frontend/proxy.lua",
+		"/D/lua-debug/extension/script/common/protocol.lua",
+		"/D/lua-debug/extension/script/frontend/stdio.lua",
+		"/D/lua-debug/extension/script/frontend/main.lua",
+		"/D/lua-debug/extension/script/backend/worker.lua",
+		"/D/lua-debug/compile/luajit/make_windows.lua",
+		"/D/lua-debug/src/luadebug/compat/5x/mainthread.cpp",
+		"/D/lua-debug/extension/script/backend/worker/variables.lua",
+		"/D/lua-debug/extension/js/extension.js",
+		"/D/lua-debug/extension/script/bootstrap.lua",
+		"/D/lua-debug/3rd/bee.lua/bootstrap/main.cpp",
+		"/D/lua-debug/examples/attach/test_hook.lua",
+		"/D/lua-debug/3rd/bee.lua/3rd/fmt/fmt/ostream.h",
+		"/D/lua-debug/3rd/bee.lua/binding/port/lua_windows.cpp",
+		"/D/lua-debug/3rd/lua/lua-latest/liolib.c",
+		"/D/lua-debug/3rd/bee.lua/bootstrap/bootstrap_init.cpp",
+		"/D/lua-debug/compile/common/bee.lua",
+		"/D/lua-debug/3rd/bee.lua/3rd/lua/lua.h",
+		"/D/lua-debug/docs/capabilities.md",
+		"/D/lua-debug/3rd/bee.lua/3rd/lua/ldblib.c",
+		"/D/lua-debug/compile/common/make.lua",
+		"/D/lua-debug/3rd/bee.lua/3rd/lua/liolib.c",
+		"/D/lua-debug/src/launcher/main.cpp",
+		"/D/lua-debug/extension/script/frontend/process_inject.lua",
+		"/D/lua-debug/src/process_inject/macos/main.cpp",
+		"/D/lua-debug/extension/script/frontend/debuger_factory.lua",
+		"/D/lua-debug/docs/luadebug/visitor.lua",
+		"/D/lua-debug/extension/package.json",
+		"/D/luaecs/test.lua",
+		"/D/luaecs/ecs.lua",
+		"/D/msys64/home/liuhuan/.ssh/config",
+		"/D/ltask/src/ltask.c",
+		"/D/ltask/service/service.lua",
+		"/D/luaecs/Makefile",
+		"/D/ant/pkg/ant.render/render_system/render_object.lua",
+		"/D/ant/pkg/ant.render/render_system/render_object.ecs",
+		"/D/ant/pkg/ant.render/render_system/render_system.ecs",
+		"/D/ant/engine/bootstrap.lua",
+		"/D/ant/test/simple/main.lua",
+		"/D/ant/test/simple/pkg/ant.test.simple/package.ecs",
+		"/D/ant/engine/task/bootstrap.lua",
+		"/D/ant/pkg/ant.window/service/world.lua",
+		"/D/ant/pkg/ant.window/service/boot.lua",
+		"/D/ant/engine/directory.lua",
+		"/D/ant/pkg/ant.window/main.lua",
+		"/D/ant/engine/packagemanager.lua",
+		"/D/ant/README.md",
+		"/D/ant/pkg/ant.ecs/policy.lua",
+		"/D/ant/pkg/ant.ecs/interface.lua",
+		"/D/ant/pkg/ant.ecs/feature.lua",
+		"/D/ant/pkg/ant.ecs/main.lua",
+		"/D/ant/pkg/ant.animation/playback.lua",
+		"/D/ant/test/simpleecs/package.ecs",
+		"/D/ant/test/simpleecs/simpleecs.lua",
+		"/D/ant/test/simple/pkg/ant.test.simple/main_system.lua",
+		"/D/ant/test/simple/pkg/ant.test.simple/init_system.lua",
+		"/D/ant/pkg/ant.window/service/window.lua",
+		"/C/Users/liuhuan/Downloads/InstallationLog.txt",
+		"/D/pytorch-siamese-triplet/dataloader/triplet_img_loader.py",
+		"/D/pytorch-siamese-triplet/train.py",
+		"/D/UnityURPToonLitShaderExample/SimpleURPToonLitOutlineExample.shader",
+		"/D/UnityURPToonLitShaderExample/SimpleURPToonLitOutlineExample_Shared.hlsl",
+		"/D/jrender/demo1-render.py",
+		"/D/jrender/jrender/renderer/utils/cuda/voxelization.py",
+		"/D/jrender/jrender/renderer/dr/softras/cuda/soft_rasterize_coarse_to_fine.py",
+		"/D/jrender/jrender/renderer/dr/n3mr/cuda/rasterize.py",
+		"/D/jrender/jrender/renderer/dr/softras/cuda/soft_rasterize.py",
+		"/D/unity-changelog/2017.1.0-0.md",
+		"/D/deeplearning.ai-andrewNG-master/COURSE 2 Improving Deep Neural Networks Hyperparameter tuning, Regularization and Optimization/week 03/homework2.py",
+		"/D/deeplearning.ai-andrewNG-master/COURSE 2 Improving Deep Neural Networks Hyperparameter tuning, Regularization and Optimization/week 02/homework.py",
+		"/D/deeplearning.ai-andrewNG-master/COURSE 1 Neural Networks and Deep Learning/Week 4/Deep Neural Network Application_ Image Classification/homework3.py",
+		"/D/deeplearning.ai-andrewNG-master/COURSE 2 Improving Deep Neural Networks Hyperparameter tuning, Regularization and Optimization/week 01/Initialization/homework-week1.py",
+		"/D/deeplearning.ai-andrewNG-master/COURSE 2 Improving Deep Neural Networks Hyperparameter tuning, Regularization and Optimization/week 01/Regularization/homework2.py",
+		"/D/deeplearning.ai-andrewNG-master/COURSE 2 Improving Deep Neural Networks Hyperparameter tuning, Regularization and Optimization/week 01/homework-week1.py",
+		"/D/deeplearning.ai-andrewNG-master/COURSE 1 Neural Networks and Deep Learning/Week 4/Building your Deep Neural Network - Step by Step/week4-1.py",
+		"/D/deeplearning.ai-andrewNG-master/COURSE 1 Neural Networks and Deep Learning/Week 4/Deep Neural Network Application_ Image Classification/week4-2.py",
+		"/D/deeplearning.ai-andrewNG-master/COURSE 1 Neural Networks and Deep Learning/Week 4/week4-1.py",
+		"/D/deeplearning.ai-andrewNG-master/COURSE 1 Neural Networks and Deep Learning/Week 4/my.py",
+		"/D/deeplearning.ai-andrewNG-master/COURSE 1 Neural Networks and Deep Learning/Week 3/Planar data classification with one hidden layer/my.py",
+		"/D/deeplearning.ai-andrewNG-master/COURSE 1 Neural Networks and Deep Learning/Week 2/Logistic Regression as a Neural Network/my.py",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/User/Preferences.sublime-settings",
+		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "debugger.lua",
+					"selected": true,
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1402,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								745,
+								745
+							]
+						],
+						"settings":
+						{
+							"lsp_uri": "file:///C:/Users/liuhuan/AppData/Roaming/Sublime%20Text/Packages/Debugger/examples/mylua/debugger.lua",
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.Debugger":
+	{
+		"height": 258.0
+	},
+	"output.Debugger Console":
+	{
+		"height": 203.0
+	},
+	"output.LSP Log Panel":
+	{
+		"height": 0.0
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "mylua.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"reque",
+				"modules\\adapters\\util\\request.py"
+			],
+			[
+				"",
+				"modules\\adapters\\mylua.py"
+			],
+			[
+				"sess",
+				"modules\\dap\\session.py"
+			],
+			[
+				"deubugger",
+				"modules\\debugger.py"
+			],
+			[
+				"my",
+				"modules\\adapters\\mylua.py"
+			],
+			[
+				"work",
+				"extension\\script\\backend\\worker.lua"
+			],
+			[
+				"beewindows",
+				"3rd\\bee.lua\\binding\\port\\lua_windows.cpp"
+			],
+			[
+				"liolib",
+				"3rd\\lua\\lua-latest\\liolib.c"
+			],
+			[
+				"protocol",
+				"extension\\script\\common\\protocol.lua"
+			],
+			[
+				"frontendst",
+				"extension\\script\\frontend\\stdio.lua"
+			],
+			[
+				"frontendprox",
+				"extension\\script\\frontend\\proxy.lua"
+			],
+			[
+				"frontend",
+				"extension\\script\\frontend\\main.lua"
+			],
+			[
+				"bootstrap",
+				"extension\\script\\bootstrap.lua"
+			],
+			[
+				"debugger",
+				"extension\\script\\debugger.lua"
+			],
+			[
+				"bootstrap_init",
+				"3rd\\bee.lua\\bootstrap\\bootstrap_init.cpp"
+			],
+			[
+				"frontma",
+				"extension\\script\\frontend\\main.lua"
+			],
+			[
+				"worker",
+				"extension\\script\\backend\\worker.lua"
+			],
+			[
+				"main.cpp",
+				"3rd\\bee.lua\\bootstrap\\main.cpp"
+			],
+			[
+				"path.",
+				"3rd\\bee.lua\\bee\\sys\\path_win.cpp"
+			],
+			[
+				"sys.",
+				"3rd\\bee.lua\\binding\\lua_sys.cpp"
+			],
+			[
+				"visitor",
+				"src\\luadebug\\rdebug_visitor.cpp"
+			],
+			[
+				"visi",
+				"docs\\luadebug\\visitor.lua"
+			],
+			[
+				"hookmgr",
+				"src\\luadebug\\rdebug_hookmgr.cpp"
+			],
+			[
+				"frontend/main",
+				"extension\\script\\frontend\\main.lua"
+			],
+			[
+				"debugg",
+				"extension\\script\\debugger.lua"
+			],
+			[
+				"breakpoint",
+				"extension\\script\\backend\\worker\\breakpoint.lua"
+			],
+			[
+				"channel",
+				"3rd\\bee.lua\\binding\\lua_channel.cpp"
+			],
+			[
+				"source",
+				"extension\\script\\backend\\worker\\source.lua"
+			],
+			[
+				"break",
+				"extension\\script\\backend\\worker\\breakpoint.lua"
+			],
+			[
+				"package",
+				"publish\\package.json"
+			],
+			[
+				"playback",
+				"ant\\pkg\\ant.animation\\playback.lua"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 353.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

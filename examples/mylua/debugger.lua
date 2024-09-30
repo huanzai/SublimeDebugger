@@ -24,6 +24,8 @@ local function getLatestDebugger()
     -- end
     -- table.sort(luaDebugs, function (a, b) return a[1] == b[1] and a[2] > b[2] or a[1] > b[1] end)
     -- return luaDebugs[1][2]
+
+    return "C:\\Users\\liuhuan\\AppData\\Local\\Sublime Text\\Package Storage\\Debugger\\mylua\\"
 end
 
 local function dofile(filename)
