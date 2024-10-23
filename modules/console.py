@@ -529,6 +529,8 @@ class ConsoleOutputPanel(OutputPanel, dap.Console):
 		else:
 			self.write(str(value).rstrip('\n'), 'comment', ensure_new_line=True)
 
+		core.info(type, str(value))
+
 		if source:
 			self.add_annotation(self.at() - 1, source)
 

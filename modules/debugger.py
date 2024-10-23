@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Any, Iterable
 
 import sublime
+import traceback
 
 from .import core
 from .import ui
@@ -420,7 +421,7 @@ class Debugger (core.Dispose, dap.Debugger):
 
 			# color the end prompt as an error if there were no errors found
 			if not found_error:
-				self.console.error('Debugging ended unexpectedly')
+				self.console.error('Debugging ended unexpectedly '.join(traceback.format_stack()))
 			else:
 				self.console.info('Debugging ended unexpectedly')
 

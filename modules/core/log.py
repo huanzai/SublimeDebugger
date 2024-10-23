@@ -3,6 +3,7 @@ from typing import Any, Protocol
 
 import sublime
 import traceback
+import sys
 
 _should_log_exceptions = True
 _should_log_error = True
@@ -19,13 +20,17 @@ def log_configure(log_info: bool, log_errors: bool, log_exceptions: bool):
 	_should_log_info = log_info
 
 def info(*args: Any) -> None:
-	if not _should_log_info:
-		return
+	# if not _should_log_info:
+	# 	return
+	with open("C:\\Users\\Administrator\\Downloads\\Debugger.log", 'a') as f:
+		print('Debugger:', *args, file = f)
 	print('Debugger:', *args)
 
 def error(*args: Any) -> None:
-	if not _should_log_error:
-		return
+	# if not _should_log_error:
+	# 	return
+	with open("C:\\Users\\Administrator\\Downloads\\Debugger.log", 'a') as f:
+		print('Debugger:', *args, file = f)
 	print('Debugger: error:', *args)
 
 def alert(*args: Any) -> None:

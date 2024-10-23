@@ -19,6 +19,8 @@ from .error import Error
 import threading
 from dataclasses import dataclass
 
+import traceback
+
 
 class TransportConnectionError(core.Error):
 	...
@@ -163,10 +165,14 @@ class TransportStream(Transport):
 					bytes_left = size - len(content)
 					content += self.read(bytes_left)
 
+				content = content.replace(b'[\\\\0-\\\\f7\xc2-\xfd][\x80-\xbf]*', b'unknown encoding')
+				core.info("read_transport", content)
+				
 				self.on_message(core.json_decode(content))
 
 		except Exception as e:
 			msg = '-- end transport protocol: ' + (str(e) or 'eof')
+			msg = msg + "\n" + traceback.format_exc()
 			core.call_soon(self.on_closed, msg)
 
 	def send(self, message: dict[str, Any]):

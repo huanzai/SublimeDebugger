@@ -23,7 +23,7 @@
 	"minimum_console_height": 10,
 
 	// Additional console logs and some new features are locked behind this flag
-	"development": false,
+	"development": true,
 
 	// Sets a specific path for node if not set adapters that require node to run will use whatever is in your path
 	"node": null,

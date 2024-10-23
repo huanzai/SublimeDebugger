@@ -115,9 +115,62 @@
 			"file": "debugger.lua",
 			"settings":
 			{
-				"buffer_size": 1402,
-				"line_ending": "Windows"
-			}
+				"buffer_size": 1507,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					7,
+					1,
+					"",
+					null,
+					"AQAAAE8EAAAAAAAAUQQAAAAAAAAHAAAAbGl1aHVhbg",
+					"CgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAATwQAAAAAAABWBAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					8,
+					1,
+					"insert",
+					{
+						"characters": "min"
+					},
+					"AwAAAFEEAAAAAAAAUgQAAAAAAAAAAAAAUgQAAAAAAABTBAAAAAAAAAAAAABTBAAAAAAAAFQEAAAAAAAAAAAAAA",
+					"CgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAUQQAAAAAAABRBAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					9,
+					1,
+					"insert",
+					{
+						"characters": "ist"
+					},
+					"AwAAAFQEAAAAAAAAVQQAAAAAAAAAAAAAVQQAAAAAAABWBAAAAAAAAAAAAABWBAAAAAAAAFcEAAAAAAAAAAAAAA",
+					"CgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAVAQAAAAAAABUBAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					10,
+					1,
+					"insert",
+					{
+						"characters": "rator"
+					},
+					"BQAAAFcEAAAAAAAAWAQAAAAAAAAAAAAAWAQAAAAAAABZBAAAAAAAAAAAAABZBAAAAAAAAFoEAAAAAAAAAAAAAFoEAAAAAAAAWwQAAAAAAAAAAAAAWwQAAAAAAABcBAAAAAAAAAAAAAA",
+					"CgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAVwQAAAAAAABXBAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "main.lua",
+			"settings":
+			{
+				"buffer_size": 164,
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
 		}
 	],
 	"build_system": "",
@@ -184,10 +237,12 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/examples/mylua"
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text/Packages/Debugger/examples/mylua"
 	],
 	"file_history":
 	[
+		"/C/Users/Administrator/sublime.log",
+		"/D/lua-debug/build/win32-x64/debug/obj/lua54/luadebug.pdb",
 		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/examples/mylua/debugger.lua",
 		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/examples/mylua/main.lua",
 		"/C/Users/liuhuan/AppData/Roaming/Sublime Text/Packages/Debugger/modules/adapters/util/request.py",
@@ -346,19 +401,18 @@
 				{
 					"buffer": 0,
 					"file": "debugger.lua",
-					"selected": true,
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1402,
+						"buffer_size": 1507,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								745,
-								745
+								704,
+								704
 							]
 						],
 						"settings":
@@ -366,10 +420,71 @@
 							"lsp_uri": "file:///C:/Users/liuhuan/AppData/Roaming/Sublime%20Text/Packages/Debugger/examples/mylua/debugger.lua",
 							"syntax": "Packages/Lua/Lua.sublime-syntax",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 54
+							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 108.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "main.lua",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 164,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -416,7 +531,7 @@
 	},
 	"output.Debugger Console":
 	{
-		"height": 203.0
+		"height": 534.0
 	},
 	"output.LSP Log Panel":
 	{
@@ -591,6 +706,11 @@
 	"selected_group": 0,
 	"settings":
 	{
+		"_vintageous_reset_during_init": true,
+		"vintage":
+		{
+			"_cmdline_cd": "C:\\Users\\Administrator\\AppData\\Roaming\\Sublime Text\\Packages\\Debugger\\examples\\mylua"
+		}
 	},
 	"show_minimap": true,
 	"show_open_files": false,
