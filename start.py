@@ -39,6 +39,8 @@ was_opened_at_startup: Set[int] = set()
 debugger33_path = os.path.join(sublime.packages_path(), 'Debugger33')
 
 def plugin_loaded() -> None:
+	log_dir = os.path.abspath(os.path.join(sublime.cache_path(), '..', 'Log'))
+	core.make_directory(log_dir)
 
 	# do this first since we need to configure logging right away
 	SettingsRegistery.initialize(on_updated=updated_settings)
@@ -46,6 +48,8 @@ def plugin_loaded() -> None:
 		log_info= Settings.development,
 		log_errors= True,
 		log_exceptions= True,
+		log_tofile= True,
+		log_file_path= f"{log_dir}/debugger_log.txt",
 	)
 
 	core.info('[startup]')
