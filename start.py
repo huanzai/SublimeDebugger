@@ -33,6 +33,7 @@ from .modules.output_panel import OutputPanel
 
 from .modules.adapters import * #import all the adapters so Adapters.initialize() will see them
 from .modules.settings import SettingsRegistery, Settings
+from .modules.key_command import KeyCommand
 
 was_opened_at_startup: Set[int] = set()
 
@@ -343,3 +344,15 @@ class EventListener (sublime_plugin.EventListener):
 
 		for debugger in Debugger.debuggers():
 			debugger.breakpoints.source.invalidate(view)
+
+class OpenDebuggerCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		KeyCommand.open_debugger(self.view)
+
+class StepOverCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		KeyCommand.step_over(self.view)
+
+class StepInCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		KeyCommand.step_in(self.view)

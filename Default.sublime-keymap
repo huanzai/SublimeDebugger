@@ -1,0 +1,14 @@
+[
+	{ 
+		"keys": ["f5"], 
+		"command": "open_debugger"
+	},
+	{ 
+		"keys": ["f10"], 
+		"command": "step_over"
+	},
+	{ 
+		"keys": ["f11"], 
+		"command": "step_in"
+	}
+]
