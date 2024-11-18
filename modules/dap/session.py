@@ -466,7 +466,7 @@ class Session(TransportListener, core.Dispose):
 		# so we foreceully disconnect
 		await self.request('disconnect', {
 			'restart': False,
-			'terminateDebuggee': True,
+			'terminateDebuggee': False,
 		})
 
 		await self.stop_session()
