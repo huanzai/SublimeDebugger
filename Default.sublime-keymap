@@ -10,5 +10,9 @@
 	{ 
 		"keys": ["f11"], 
 		"command": "step_in"
+	},
+	{ 
+		"keys": ["shift+f11"], 
+		"command": "step_over"
 	}
 ]

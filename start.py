@@ -356,3 +356,7 @@ class StepOverCommand(sublime_plugin.TextCommand):
 class StepInCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		KeyCommand.step_in(self.view)
+
+class StepOutCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		KeyCommand.step_out(self.view)

@@ -41,3 +41,13 @@ class KeyCommand:
 				debugger.step_in()
 		except core.Error as e:
 			self.console.error(f'Unable to step in: {e}')
+
+	@staticmethod
+	def step_out(view: sublime.View):
+		window = view.window()
+		debugger = KeyCommand.get_debugger(window)
+		try:
+			if Debugger.is_paused:
+				debugger.step_out()
+		except core.Error as e:
+			self.console.error(f'Unable to step out: {e}')
