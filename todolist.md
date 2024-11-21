@@ -10,6 +10,6 @@
 
 - [x] 完善 debugger log 日志
 
-- [ ] 支持读取 .vscode/launch.json 目录配置
+- [x] 支持读取 .vscode/launch.json 目录配置
 
 - [ ] 完善部署流程
