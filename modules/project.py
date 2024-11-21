@@ -9,6 +9,7 @@ from .settings import Settings
 
 import sublime
 import os
+import json
 
 import contextlib
 
@@ -206,6 +207,16 @@ class Project:
 
 		return configurations
 
+	def _extract_from_vscode_launch_data(self, data: Any, key: str):
+		configurations: list[tuple[Any, dap.SourceLocation]] = []
+
+		if location := self.location:
+			source = dap.SourceLocation.from_path(location, line_regex=key)
+			for configuration_or_file in data.get(key, []):
+				configurations.append((configuration_or_file, source))		
+
+		return configurations
+
 	def _load_configurations(self, console: dap.Console):
 		data: dict[str, Any]|None = self.window.project_data()
 		if data is None:
@@ -233,6 +244,25 @@ class Project:
 		for json, source in self._extract_from_project_data(data, 'debugger_configurations'):
 			with report_issues('Configuration', json, source):
 				configurations.append(Configuration.from_json(json, len(configurations), source))
+
+		def json_decode(path):
+			with open(path, 'r') as file:
+				contents = file.read() or "{}"
+
+			return sublime.decode_value(contents) or {}
+
+		# 读取 .vscode/launch.json 配置
+		folders:list[str]|None = self.window.folders()
+		for folder in folders:
+			vscode_launch_path = os.path.join(folder, ".vscode", "launch.json")
+			if not os.path.exists(vscode_launch_path):
+				continue
+
+			launch_data = json_decode(vscode_launch_path)
+			for json, source in self._extract_from_vscode_launch_data(launch_data, 'configurations'):
+				with report_issues('Configuration', json, source):
+					configurations.append(Configuration.from_json(json, len(configurations), source))
+
 
 		for json, source in self._extract_from_project_data(data, 'debugger_compounds'):
 			with report_issues('Configuration Compound', json, source):

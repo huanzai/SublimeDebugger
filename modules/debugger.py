@@ -289,6 +289,7 @@ class Debugger (core.Dispose, dap.Debugger):
 			async def launch(configuration: dap.Configuration):
 				try:
 					adapter_configuration = dap.AdapterConfiguration.get(configuration.type)
+					configuration = adapter_configuration.resolve_config(configuration)
 					configuration_expanded = dap.ConfigurationExpanded(configuration, variables)
 
 					pre_debug_task = configuration_expanded.get('pre_debug_task')

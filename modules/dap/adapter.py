@@ -5,7 +5,7 @@ from .. import core
 from .. import dap
 
 from .transport import Transport
-from .configuration import ConfigurationExpanded
+from .configuration import ConfigurationExpanded, Configuration
 
 import sublime
 import re
@@ -139,6 +139,9 @@ class AdapterConfiguration(metaclass=AdapterConfigurationRegistery):
 
 	async def start(self, log: core.Logger, configuration: ConfigurationExpanded) -> Transport:
 		...
+
+	def resolve_config(self, config: Configuration):
+		return config
 
 	@property
 	def installed_version(self) -> str | None:

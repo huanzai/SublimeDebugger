@@ -7,7 +7,7 @@ from .. import core
 import os
 
 class MyLuaInstaller(util.vscode.AdapterInstaller):
-    type = 'mylua'
+    type = 'lua'
 
     async def install(self, version: str|None, log: core.Logger):
         path = 'D:\\lua-debug\\publish'
@@ -17,7 +17,7 @@ class MyLuaInstaller(util.vscode.AdapterInstaller):
         return ["default"]
 
 class MyLua(dap.AdapterConfiguration):
-    type = 'mylua'
+    type = 'lua'
     docs = 'https://github.com/huanzai/lua-debug'
     installer = MyLuaInstaller()
 
@@ -27,3 +27,41 @@ class MyLua(dap.AdapterConfiguration):
             f'{install_path}/bin/lua-debug.exe'
         ]
         return dap.StdioTransport(command)
+
+    def resolve_config(self, config: dap.Configuration):
+        json = config.copy()
+        if json.get('stopOnThreadEntry', None) == None:
+            json['stopOnThreadEntry'] = False
+
+        if json.get('luaVersion', None) == None:
+            json['luaVersion'] = 'lua54'
+
+        if json.get('luaArch', None) == None:
+            json['luaArch'] = 'x86_64'
+
+        if json.get('console', None) == None:
+            json['console'] = 'integratedTerminal'
+
+        if json.get('sourceCoding', None) == None:
+            json['sourceCoding'] = 'utf8'
+
+        if json.get('outputCapture', None) == None:
+            json['outputCapture'] = []
+
+        if json.get('pathFormat', None) == None:
+            json['pathFormat'] = 'path'
+
+        if json.get('inject', None) == None:
+            json['inject'] = 'none'
+
+        if json.get('client', None) == None:
+            json['client'] = True
+
+        if json.get('configuration', None) == None:
+            json['configuration'] = {
+                'variables':{'showIntegerAsHex':False}
+            }
+        new_config = dap.Configuration(config.name, -1, config.type, config.request, json, config.source)
+        new_config.id_ish = config.id_ish
+        return new_config
+
