@@ -1,3 +1,7 @@
+# 说明 
+
+拷贝自 [sublime_debugger](https://github.com/daveleroy/sublime_debugger)，目标是支持 [lua-debug](https://github.com/huanzai/lua-debug)
+
 # Sublime Debugger
 
 Graphical Debugger for sublime text for debuggers that support the debug adapter protocol.
