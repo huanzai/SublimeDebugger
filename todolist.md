@@ -12,4 +12,6 @@
 
 - [x] 支持读取 .vscode/launch.json 目录配置
 
+- [x] 支持无 project 模式
+
 - [ ] 完善部署流程

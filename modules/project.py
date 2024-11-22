@@ -46,7 +46,7 @@ class Project:
 	def location(self) -> str|None:
 		if project_name := self.window.project_file_name():
 			return project_name
-		return None
+		return "Window_id"+str(self.window.id())
 
 	@property
 	def name(self) -> str:

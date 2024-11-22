@@ -9,7 +9,7 @@ class KeyCommand:
 	def get_debugger(window):
 		debugger = Debugger.get(window)
 		if not debugger or not debugger.is_open():
-			debugger = Debugger.create(window, skip_project_check = False)
+			debugger = Debugger.create(window, skip_project_check = True)
 		return debugger
 
 	@staticmethod
