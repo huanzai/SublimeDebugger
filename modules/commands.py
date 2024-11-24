@@ -23,6 +23,7 @@ class Commands:
 		name='Open',
 		key='open',
 		action=lambda debugger: debugger.open(),
+		flags=Command.menu_commands|Command.menu_main|Command.allow_debugger_outside_project,
 	)
 	quit = Command (
 		name='Quit',
