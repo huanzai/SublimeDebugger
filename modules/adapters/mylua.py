@@ -10,8 +10,10 @@ class MyLuaInstaller(util.vscode.AdapterInstaller):
     type = 'lua'
 
     async def install(self, version: str|None, log: core.Logger):
-        path = 'D:\\lua-debug\\publish'
-        await self.install_local(path, log=log)
+        # path = 'D:\\lua-debug\\publish'
+        # await self.install_local(path, log=log)
+        url = 'https://github.com/huanzai/lua-debug/releases/download/2.0.11/lua-debug-2.0.11.vsix'
+        await self.install_vsix(url, log = log)
 
     async def installable_versions(self, log: core.Logger) -> list[str]:
         return ["default"]

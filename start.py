@@ -49,7 +49,7 @@ def plugin_loaded() -> None:
 		log_info= Settings.development,
 		log_errors= True,
 		log_exceptions= True,
-		log_tofile= True,
+		log_tofile= Settings.development,
 		log_file_path= f"{log_dir}/debugger_log.txt",
 	)
 
