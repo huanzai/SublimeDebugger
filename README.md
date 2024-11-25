@@ -2,6 +2,27 @@
 
 拷贝自 [sublime_debugger](https://github.com/daveleroy/sublime_debugger)，目标是支持 [lua-debug](https://github.com/huanzai/lua-debug)
 
+# 目标
+使 sublime 也支持 lua-debug(原 actboy168，本作者改进版)，操作体验与 vscode 一致。
+
+说明：lua-debug 改进了原无法随时开启 debugger 的问题。
+
+# 安装
++ 安装 Sublime Debugger 插件 （作者 改进版）
+    - 在 sublime 执行 ctrl+shift+p，输入 Add Repository，输入：[https://github.com/huanzai/SublimeDebugger](https://github.com/huanzai/SublimeDebugger)
+    - 在 sublime 再次执行 ctrl+shift+p，输入 Install Package，输入并选中：SublimeDebugger
++ 首次安装 lua-debug 
+    - 打开项目工程（有无 project 均可），执行 F5 
+    - 选择 Install Adapters - lua 
+
+# 使用
+lua-debug 支持无 project 模式（即不需要创建 sublime-project），支持读取 .vscode/launch.json 配置（与 vscode 保持一致），一份配置即可。
+
++ F5 开启 Debugger ，首次需要选择一下你的配置 Debugger
++ F10 下一行
++ F11 进入方法
++ Shfit+F11 退出方法
+
 # Sublime Debugger
 
 Graphical Debugger for sublime text for debuggers that support the debug adapter protocol.
