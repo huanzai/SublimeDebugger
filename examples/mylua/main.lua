@@ -21,6 +21,10 @@ local t2 = {
     b = {11,22},
 }
 
+local t3 = {
+    1,2,3,4
+}
+
 local function foo()
     return a + b
 end
