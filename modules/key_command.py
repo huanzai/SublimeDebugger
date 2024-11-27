@@ -8,7 +8,7 @@ class KeyCommand:
 	@staticmethod
 	def get_debugger(window):
 		debugger = Debugger.get(window)
-		if not debugger or not debugger.is_open():
+		if not debugger:
 			debugger = Debugger.create(window, skip_project_check = True)
 		return debugger
 
@@ -16,11 +16,15 @@ class KeyCommand:
 	def open_debugger(view: sublime.View):
 		window = view.window()
 		debugger = KeyCommand.get_debugger(window)
+
 		try:
-			if debugger.current_session and Debugger.is_paused:
+			if debugger.current_session and debugger.is_paused():
 				debugger.resume()
 		except:
-			debugger.start(False)
+			if not debugger.is_open():
+				debugger.open()
+			else:
+				debugger.start(False)
 
 	@staticmethod
 	def step_over(view: sublime.View):
