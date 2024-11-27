@@ -6,7 +6,7 @@
 # TODO
 - [x] debugger 界面及时刷新
 
-- [x] F5, F10, F11 快捷键支持
+- [x] F5, F9, F10, F11 快捷键支持
 
 - [x] 完善 debugger log 日志
 

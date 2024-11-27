@@ -349,6 +349,10 @@ class OpenDebuggerCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		KeyCommand.open_debugger(self.view)
 
+class ToggleBreakpointCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		KeyCommand.toggle_breakpoint(self.view)
+
 class StepOverCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		KeyCommand.step_over(self.view)

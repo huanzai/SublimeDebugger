@@ -27,6 +27,12 @@ class KeyCommand:
 				debugger.start(False)
 
 	@staticmethod
+	def toggle_breakpoint(view: sublime.View):
+		window = view.window()
+		debugger = KeyCommand.get_debugger(window)
+		debugger.toggle_breakpoint()
+
+	@staticmethod
 	def step_over(view: sublime.View):
 		window = view.window()
 		debugger = KeyCommand.get_debugger(window)

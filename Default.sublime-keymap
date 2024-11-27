@@ -4,6 +4,10 @@
 		"command": "open_debugger"
 	},
 	{ 
+		"keys": ["f9"], 
+		"command": "toggle_breakpoint"
+	},
+	{ 
 		"keys": ["f10"], 
 		"command": "step_over"
 	},
