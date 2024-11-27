@@ -18,7 +18,7 @@ _debug_force_update_timer: core.timer|None = None
 def startup():
 	Images.shared = Images()
 	global _update_timer
-	_update_timer = core.timer(Layout.update_layouts, 0.25, True)
+	_update_timer = core.timer(Layout.update_layouts, 0.033, True)
 
 def shutdown():
 	if _update_timer:
