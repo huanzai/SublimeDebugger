@@ -4,7 +4,7 @@
 - 已知如何通过 log 进行 debug
 
 # TODO
-- [ ] debugger 界面及时刷新
+- [x] debugger 界面及时刷新
 
 - [x] F5, F10, F11 快捷键支持
 
