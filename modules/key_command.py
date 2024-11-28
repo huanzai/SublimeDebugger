@@ -20,6 +20,9 @@ class KeyCommand:
 		try:
 			if debugger.current_session and debugger.is_paused():
 				debugger.resume()
+			else:
+				if not debugger.is_open():
+					debugger.open()
 		except:
 			if not debugger.is_open():
 				debugger.open()

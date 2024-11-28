@@ -269,7 +269,7 @@ class Layout:
 			if self._last_check_was_differnt == 0:
 				self.invalidate()
 
-			if self._last_check_was_differnt == -2 and self.scrolling and not scolling:
+			if self._last_check_was_differnt == 3 and self.scrolling and not scolling:
 				self.scrolling = False
 				self.invalidate()
 
