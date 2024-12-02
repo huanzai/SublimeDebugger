@@ -1,5 +1,7 @@
 # 说明 
 
+lua-debug for Sublime
+
 拷贝自 [sublime_debugger](https://github.com/daveleroy/sublime_debugger)，目标是支持 [lua-debug](https://github.com/huanzai/lua-debug)
 
 # 目标
@@ -22,6 +24,11 @@ lua-debug 支持无 project 模式（即不需要创建 sublime-project），支
 + F10 下一行
 + F11 进入方法
 + Shfit+F11 退出方法
+
+# 用例
+
++ [examples/mylua](https://github.com/huanzai/SublimeDebugger/tree/master/examples/mylua)
++ [examples/mylua_without_project](https://github.com/huanzai/SublimeDebugger/tree/master/examples/mylua_without_project)
 
 # Sublime Debugger
 
