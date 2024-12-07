@@ -113,7 +113,8 @@ def most_relevant_debuggers_for_view(view: sublime.View) -> Iterable[Debugger]:
 	if debugger := Debugger.get(view):
 		return [debugger]
 
-	return list(Debugger.debuggers())
+	# return list(Debugger.debuggers())
+	return []
 
 
 def updated_settings():
