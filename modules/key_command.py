@@ -15,7 +15,10 @@ class KeyCommand:
 	@staticmethod
 	def open_debugger(view: sublime.View):
 		window = view.window()
-		debugger = KeyCommand.get_debugger(window)
+		debugger = Debugger.get(window)
+		if not debugger:
+			debugger = Debugger.create(window, skip_project_check = True)
+			return
 
 		try:
 			if debugger.current_session and debugger.is_paused():
