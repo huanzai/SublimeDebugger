@@ -79,15 +79,18 @@ class Session(TransportListener, core.Dispose):
 		self.breakpoints = breakpoints
 		self.breakpoints_for_id: dict[int, Breakpoint] = {}
 
+		self.watch = watch
+		@core.run
+		def on_added_expression(expr):
+			return self.watch.evaluate_expression(self, expr)
+
 		self.dispose_add(
 			self.breakpoints.data.on_send.add(self.on_send_data_breakpoints),
 			self.breakpoints.function.on_send.add(self.on_send_function_breakpoints),
 			self.breakpoints.filters.on_send.add(self.on_send_filters),
 			self.breakpoints.source.on_send.add(self.on_send_source_breakpoint),
+			self.watch.on_added.add(on_added_expression),
 		)
-
-		self.watch = watch
-		self.watch.on_added.add(lambda expr: self.watch.evaluate_expression(self, expr))
 
 		self._transport_started = False
 		self._transport: Transport|None = None
