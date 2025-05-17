@@ -20,17 +20,21 @@ class KeyCommand:
 			debugger = Debugger.create(window, skip_project_check = True)
 			return
 
+		if not debugger.is_open():
+			debugger.open()
+
+	@staticmethod
+	def start_or_resume(view: sublime.View):
+		window = view.window()
+		debugger = KeyCommand.get_debugger(window)
+
 		try:
 			if debugger.current_session and debugger.is_paused():
 				debugger.resume()
 			else:
-				if not debugger.is_open():
-					debugger.open()
-		except:
-			if not debugger.is_open():
-				debugger.open()
-			else:
 				debugger.start(False)
+		except:
+			debugger.start(False)
 
 	@staticmethod
 	def toggle_breakpoint(view: sublime.View):

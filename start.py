@@ -350,6 +350,10 @@ class OpenDebuggerCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		KeyCommand.open_debugger(self.view)
 
+class StartOrResumeCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		KeyCommand.start_or_resume(self.view)
+
 class ToggleBreakpointCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		KeyCommand.toggle_breakpoint(self.view)

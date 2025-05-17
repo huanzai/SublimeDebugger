@@ -7,7 +7,7 @@
                 "caption": "Debugger",
                 "children": [
                     {
-                        "caption": "Open",
+                        "caption": "Open\tCtrl+F5",
                         "command": "debugger",
                         "args": {
                             "action": "open"
@@ -66,7 +66,7 @@
                         "caption": "-"
                     },
                     {
-                        "caption": "Start",
+                        "caption": "Start\tF5",
                         "command": "debugger",
                         "args": {
                             "action": "start"
@@ -87,7 +87,7 @@
                         }
                     },
                     {
-                        "caption": "Continue",
+                        "caption": "Continue\tF5",
                         "command": "debugger",
                         "args": {
                             "action": "continue"
@@ -101,21 +101,21 @@
                         }
                     },
                     {
-                        "caption": "Step Over",
+                        "caption": "Step Over\tF10",
                         "command": "debugger",
                         "args": {
                             "action": "step_over"
                         }
                     },
                     {
-                        "caption": "Step In",
+                        "caption": "Step In\tF11",
                         "command": "debugger",
                         "args": {
                             "action": "step_in"
                         }
                     },
                     {
-                        "caption": "Step Out",
+                        "caption": "Step Out\tCtrl+F11",
                         "command": "debugger",
                         "args": {
                             "action": "step_out"
